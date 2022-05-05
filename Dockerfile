@@ -32,5 +32,6 @@ RUN cd /home/dev && \
     echo 'export IDF_GITHUB_ASSETS="dl.espressif.com/github_assets"' >> /home/dev/.bashrc && \
     echo "export IDF_PATH=/home/dev/esp32/esp-idf" >> /home/dev/.bashrc && \
     echo "export PATH=/home/dev/.local/bin:\$PATH" >> /home/dev/.bashrc && \
-    echo 'alias esp32="source /home/dev/esp32/esp-idf/export.sh"' >> /home/dev/.bashrc && \
-    source /home/dev/.bashrc
+    echo 'alias esp32="source /home/dev/esp32/esp-idf/export.sh"' >> /home/dev/.bashrc
+    #source /home/dev/.bashrc
+CMD [ "/bin/bash" ]
