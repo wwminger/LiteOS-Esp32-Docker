@@ -21,13 +21,16 @@ RUN cd /home/dev && \
     git clone -b v4.4.3 --recursive --depth=1 https://github.com/wwminger/esp-idf.git && \
     cd /home/dev/esp32/esp-idf && \
     export IDF_GITHUB_ASSETS="dl.espressif.com/github_assets" && \
+    export IDF_PATH=/home/dev/esp32/esp-idf && \
     ./install.sh esp32 && \
     . ./export.sh && \
     cd /home/dev/esp32 && \
-    git clone --depth=1 https://gitee.com/LiteOS/LiteOS.git && \
-    cd /home/dev/esp32/LiteOS && \
-    cp tools/build/config/ESP32.config .config && \
+    # git clone --depth=1 https://gitee.com/LiteOS/LiteOS.git && \
+    # cd /home/dev/esp32/LiteOS && \
+    # cp tools/build/config/ESP32.config .config && \
     #end
+    echo 'export IDF_GITHUB_ASSETS="dl.espressif.com/github_assets"' >> /home/dev/.bashrc && \
+    echo "export IDF_PATH=/home/dev/esp32/esp-idf" >> /home/dev/.bashrc && \
     echo "export PATH=/home/dev/.local/bin:\$PATH" >> /home/dev/.bashrc && \
     echo 'alias esp32="source /home/dev/esp32/esp-idf/export.sh"' >> /home/dev/.bashrc && \
     source /home/dev/.bashrc
