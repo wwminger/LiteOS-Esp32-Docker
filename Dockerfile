@@ -12,8 +12,8 @@ RUN apt-get -yqq update && \
     echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER dev
 WORKDIR /home/dev
-COPY LiteOS /home/dev/esp32/LiteOS
-COPY esp-idf /home/dev/esp32/esp-idf
+# COPY LiteOS /home/dev/esp32/LiteOS
+# COPY esp-idf /home/dev/esp32/esp-idf
 RUN cd /home/dev && \
     python3 -m pip install --user --upgrade pip setuptools wheel && \
     mkdir -p /home/dev/esp32 && \
